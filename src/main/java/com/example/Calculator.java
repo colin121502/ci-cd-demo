@@ -1,32 +1,40 @@
 package com.example;
 
 public class Calculator {
+    public static void main(String[] args) {
+        System.out.println("Calculator is running...");
 
-    public int add(int a, int b) {
+        int num1 = 10;
+        int num2 = 5;
+
+        System.out.println("Sum: " + add(num1, num2));
+        System.out.println("Difference: " + subtract(num1, num2));
+        System.out.println("Product: " + multiply(num1, num2));
+        System.out.println("Quotient: " + divide(num1, num2));
+
+        // Keeps container running
+        while (true) {
+            try {
+                Thread.sleep(60000);  // Sleep for 60 seconds before next cycle
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static int add(int a, int b) {
         return a + b;
     }
 
-    public int subtract(int a, int b) {
+    public static int subtract(int a, int b) {
         return a - b;
     }
 
-    public int multiply(int a, int b) {
+    public static int multiply(int a, int b) {
         return a * b;
     }
 
-    public double divide(int a, int b) {
-        if (b == 0) {
-            throw new ArithmeticException("Cannot divide by zero");
-        }
+    public static double divide(int a, int b) {
         return (double) a / b;
-    }
-
-    public static void main(String[] args) {
-        Calculator calc = new Calculator();
-        System.out.println("Calculator is running...");
-        System.out.println("Sum: " + calc.add(5, 3));
-        System.out.println("Difference: " + calc.subtract(5, 3));
-        System.out.println("Product: " + calc.multiply(5, 3));
-        System.out.println("Quotient: " + calc.divide(6, 3));
     }
 }
