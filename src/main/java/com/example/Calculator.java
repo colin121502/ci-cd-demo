@@ -15,7 +15,7 @@ public class Calculator {
         // Keeps container running
         while (true) {
             try {
-                Thread.sleep(60000);  // Sleep for 60 seconds before next cycle
+                Thread.sleep(60000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
